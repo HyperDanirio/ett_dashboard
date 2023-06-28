@@ -9,6 +9,7 @@ import { Button, Layout, Menu, theme } from "antd";
 import { useState } from "react";
 import { LineChart, PieChart } from "@/components/charts";
 import { Cards } from "@/components/cardLine";
+import Sidebar from "@/components/sidebar";
 const { Header, Sider, Content } = Layout;
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -32,31 +33,7 @@ const App = () => {
   }
   return (
     <Layout className="w-screen h-screen">
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "nav 1",
-            },
-            {
-              key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
-            },
-          ]}
-        />
-      </Sider>
+      <Sidebar />
       <Layout className="overflow-auto">
         <Header
           style={{
@@ -92,7 +69,7 @@ const App = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke="#015EB4"
                       className="w-4 h-4 ml-2"
                     >
@@ -132,7 +109,7 @@ const App = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="black"
                     class="w-6 h-6"
                   >
@@ -166,7 +143,7 @@ const App = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke="#063970"
                       class="w-10 h-10"
                     >

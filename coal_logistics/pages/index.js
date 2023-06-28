@@ -5,11 +5,13 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Button, Layout, Menu, theme } from "antd";
+import { Alert, Button, Layout, Menu, theme } from "antd";
 import { useState } from "react";
 import { LineChart, PieChart } from "@/components/charts";
 import { Cards } from "@/components/cardLine";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import Item from "antd/es/list/Item";
 const { Header, Sider, Content } = Layout;
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -17,6 +19,8 @@ const App = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  const router = useRouter();
   return (
     <Layout className="w-screen h-screen">
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -27,16 +31,16 @@ const App = () => {
           theme="dark"
           mode="inline"
           className="mt-5"
+          onClick={(e) => router.push(`/${key}`)}
           defaultSelectedKeys={["1"]}
           items={[
             {
-              key: "1",
+              key: "/",
               icon: <UserOutlined />,
-              label: "nav 1",
-              path: "/",
+              label: "dashboard",
             },
             {
-              key: "2",
+              key: "/ovoolgo",
               icon: <VideoCameraOutlined />,
               label: "nav 2",
             },
