@@ -42,7 +42,8 @@ const App = () => {
             {
               key: "1",
               icon: <UserOutlined />,
-              label: "nav 1",
+              label: "Dashboard",
+              path: "/",
             },
             {
               key: "2",
