@@ -5,13 +5,12 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Alert, Button, Layout, Menu, theme } from "antd";
+import { Button, Layout, Menu, theme } from "antd";
 import { useState } from "react";
+import Link from "antd/lib/typography/Link";
 import { LineChart, PieChart } from "@/components/charts";
 import { Cards } from "@/components/cardLine";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import Item from "antd/es/list/Item";
 const { Header, Sider, Content } = Layout;
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -19,8 +18,6 @@ const App = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-
-  const router = useRouter();
   return (
     <Layout className="w-screen h-screen">
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -31,26 +28,24 @@ const App = () => {
           theme="dark"
           mode="inline"
           className="mt-5"
-          onClick={(e) => router.push(`/${key}`)}
           defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "/",
-              icon: <UserOutlined />,
-              label: "dashboard",
-            },
-            {
-              key: "/ovoolgo",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
-            },
-          ]}
-        />
+        >
+          <Menu.Item>
+            <Link href="/" key={1}>
+              Dashboard
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href="/" key={2}>
+              Something
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href="/ovoolgo" key={3}>
+              Ovoolgo
+            </Link>
+          </Menu.Item>
+        </Menu>
       </Sider>
       <Layout className="overflow-auto">
         <Header
@@ -76,6 +71,7 @@ const App = () => {
             padding: 24,
             minHeight: 280,
             background: colorBgContainer,
+            borderRadius: 12,
           }}
         >
           <div className="px-16 flex flex-col gap-6">

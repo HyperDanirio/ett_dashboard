@@ -5,12 +5,35 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
+import { InboxOutlined } from "@ant-design/icons";
+import { message, Upload } from "antd";
+const { Dragger } = Upload;
 import { Button, Layout, Menu, theme } from "antd";
 import { useState } from "react";
 import { LineChart, PieChart } from "@/components/charts";
 import { Cards } from "@/components/cardLine";
-import Sidebar from "@/components/sidebar";
+import Image from "next/image";
+import Link from "antd/lib/typography/Link";
 const { Header, Sider, Content } = Layout;
+const props = {
+  name: "file",
+  multiple: true,
+  action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
+  onChange(info) {
+    const { status } = info.file;
+    if (status !== "uploading") {
+      console.log(info.file, info.fileList);
+    }
+    if (status === "done") {
+      message.success(`${info.file.name} file uploaded successfully.`);
+    } else if (status === "error") {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  },
+  onDrop(e) {
+    console.log("Dropped files", e.dataTransfer.files);
+  },
+};
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -33,7 +56,33 @@ const App = () => {
   }
   return (
     <Layout className="w-screen h-screen">
-      <Sidebar />
+      <Sider trigger={null} collapsible collapsed={collapsed}>
+        <div className="w-full h-16 flex justify-center items-center">
+          <Image src={"/logo1.png"} width={100} height={50} />
+        </div>
+        <Menu
+          theme="dark"
+          mode="inline"
+          className="mt-5"
+          defaultSelectedKeys={["1"]}
+        >
+          <Menu.Item>
+            <Link href="/" key={1}>
+              Dashboard
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href="/" key={2}>
+              Something
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href="/" key={3}>
+              Ovoolgo
+            </Link>
+          </Menu.Item>
+        </Menu>
+      </Sider>
       <Layout className="overflow-auto">
         <Header
           style={{
@@ -56,20 +105,21 @@ const App = () => {
           style={{
             margin: "24px 16px",
             padding: 24,
-            minHeight: 280,
+            minHeight: 2500,
             background: colorBgContainer,
+            borderRadius: 12,
           }}
         >
-          <div className="w-screen h-screen flex justify-center items-center bg-white">
-            <div className="w-5/6 h-5/6 bg-white flex flex-col mt-28">
+          <div className="w-screen h-screen flex justify-start items-start ">
+            <div className="w-5/6 h-5/6 flex flex-col mt-12  ml-20">
               <div className="w-full h-12 flex justify-center items-center">
                 <div className="w-1/3 h-fullflex justify-center items-center">
-                  <div className="w-48 bg-white h-8 rounded-xl border-main border-2 drop-shadow-lg flex justify-start items-center">
+                  <div className="w-48 bg-white h-8 rounded-lg border-main border-2 drop-shadow-lg flex justify-start items-center fixed">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      strokeWidth="1.5"
+                      stroke-width="1.5"
                       stroke="#015EB4"
                       className="w-4 h-4 ml-2"
                     >
@@ -83,20 +133,21 @@ const App = () => {
                   </div>
                 </div>
                 <div className="w-1/3 h-full"></div>
-                <div className="w-1/3 h-full flex justify-center items-center">
-                  <button
+                <div className="w-1/3 h-full flex justify-end items-center mr-32 mt-5">
+                  <Button
+                    className="bg-main w-32 h-8 fixed"
                     onClick={clickaddNew}
-                    className="w-32 bg-main h-8 mr-12 rounded-xl drop-shadow-lg font-bold text-white flex justify-center items-center cursor-pointer hover:bg-accent2 transition-all "
+                    type="primary"
                   >
                     Шинэ
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
             <div
               className={
                 addnew
-                  ? "w-1/2 h-1/2 bg-accent3/50 fixed rounded-xl drop-shadow-lg backdrop-blur-md flex flex-col justify-start items-center mr-32 mb-40"
+                  ? "w-1/2 h-1/2 bg-accent3/50 fixed rounded-xl drop-shadow-lg backdrop-blur-md flex flex-col justify-start items-center m-40 ml-60"
                   : "w-1/2 h-1/2 bg-accent3/50 fixed rounded-xl drop-shadow-lg backdrop-blur-md hidden"
               }
             >
@@ -109,7 +160,7 @@ const App = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth="1.5"
+                    stroke-width="1.5"
                     stroke="black"
                     class="w-6 h-6"
                   >
@@ -128,44 +179,20 @@ const App = () => {
                   </div>
                   <div className=""></div>
                 </div>
-                <div className="w-1/3 h-full border-main border-4 bg-white mr-5 rounded-2xl flex justify-center items-center flex-col">
-                  <input
+                <div className="w-1/3 h-full  mr-5 rounded-2xl flex justify-center items-center flex-col">
+                  <Dragger
+                    {...props}
+                    className="bg-white rounded-xl h-full w-full"
                     id="fileSelect"
                     type="file"
                     accept="application/pdf"
-                    className="w-40 h-12 flex justify-center items-center text-black/50 -z-10"
-                  />
-                  <label
-                    htmlFor="fileSelect"
-                    className="cursor-pointer w-auto h-auto"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="#063970"
-                      class="w-10 h-10"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12l-3-3m0 0l-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-                      />
-                    </svg>
-                  </label>
-                  <label
-                    htmlFor="fileSelect"
-                    className="w-auto h-auto text-black/50 text-xs font-semibold cursor-pointer mt-5"
-                  >
-                    <strong>Энд сонгоно уу</strong>
-                  </label>
-                  <label
-                    htmlFor="fileSelect"
-                    className="w-auto h-auto text-black/50 text-xs font-semibold cursor-pointer"
-                  >
-                    <span> эсвэл энд тавина уу</span>
-                  </label>
+                    <p className="ant-upload-drag-icon">
+                      <InboxOutlined />
+                    </p>
+                    <p className="ant-upload-text">Файлаа энд орхино уу</p>
+                    <p className="ant-upload-hint">Зөвхөн PDF оруулна</p>
+                  </Dragger>
                 </div>
               </div>
             </div>
