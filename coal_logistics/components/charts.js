@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Chart from "chart.js";
+import { useState } from "react";
 
 export const LineChart = () => {
   useEffect(() => {
@@ -71,11 +72,25 @@ export const LineChart = () => {
       },
     });
   }, []);
+
+  const [mainChart, setMainChart] = useState();
+
   return (
     <>
       <div className="w-2/3 h-full flex mx-auto flex-col mb-20">
-        <div className="w-full h-10 flex justify-start items-start">
-          <div className="w-40 h-8 bg-red-300"></div>
+        <div className="w-full h-10 flex justify-between items-center flex-row">
+          <div className="w-40 h-8 text-2xl ml-9">Мэдэхгүй</div>
+          <div className="w-fit h-full space-x-2 mr-7 flex flex-row">
+            <button className="w-24 h-8 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-200 hover:border-gray-400 flex justify-center items-center font-semibold hover:scale-105">
+              7 Хоног
+            </button>
+            <button className="w-24 h-8 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-200 hover:border-gray-400 flex justify-center items-center font-semibold hover:scale-105">
+              Сар
+            </button>
+            <button className="w-24 h-8 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-200 hover:border-gray-400 flex justify-center items-center font-semibold hover:scale-105">
+              Жил
+            </button>
+          </div>
         </div>
         <div className="  w-full h-auto my-auto">
           <canvas height={200} width={400} id="myLineChart"></canvas>

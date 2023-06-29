@@ -9,7 +9,7 @@ import {
 export const Cards = () => {
   return (
     <>
-      <div className="Card1 w-1/4 h-1/4 bg-primary rounded-md flex flex-col justify-start items-start text-white p-4 pr-4">
+      <div className="Card1 w-1/4 h-1/4 bg-primary rounded-md flex flex-col justify-start items-start text-white p-4 pr-4 shadow-lg">
         <div className="flex">
           <span className="font-semibold text-2xl ml-2">26k</span>
           <span className="flex items-center text-white/80 ml-2">
@@ -32,7 +32,7 @@ export const Cards = () => {
           <Card1LineChart />
         </div>
       </div>
-      <div className="Card2 w-1/4 h-1/4 bg-secondary rounded-md flex flex-col text-white p-4">
+      <div className="Card2 w-1/4 h-1/4 bg-secondary rounded-md flex flex-col text-white p-4 shadow-lg">
         <div className="flex">
           <span className="font-semibold text-2xl">26k</span>
           <span className="flex items-center text-white/90">
@@ -55,7 +55,7 @@ export const Cards = () => {
           <Card2LineChart />
         </div>
       </div>
-      <div className=" Card3 w-1/4 h-1/4 bg-warning rounded-md flex flex-col text-white p-4">
+      <div className=" Card3 w-1/4 h-1/4 bg-warning rounded-md flex flex-col text-white p-4 shadow-lg">
         <div className="flex">
           <span className="font-semibold text-2xl">26k</span>
           <span className="flex items-center text-white/90">
@@ -78,7 +78,7 @@ export const Cards = () => {
           <Card3LineChart />
         </div>
       </div>
-      <div className="Card4 w-1/4 h-1/4 bg-error rounded-md flex flex-col text-white p-4">
+      <div className="Card4 w-1/4 h-1/4 bg-error rounded-md flex flex-col text-white p-4 shadow-lg">
         <div className="flex">
           <span className="font-semibold text-2xl">26k</span>
           <span className="flex items-center text-white/90">

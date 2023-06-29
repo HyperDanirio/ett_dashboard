@@ -9,6 +9,7 @@ import { Button, Layout, Menu, theme } from "antd";
 import { useState } from "react";
 import { LineChart, PieChart } from "@/components/charts";
 import { Cards } from "@/components/cardLine";
+
 const { Header, Sider, Content } = Layout;
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);

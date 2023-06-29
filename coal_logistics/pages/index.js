@@ -10,6 +10,7 @@ import { useState } from "react";
 import { LineChart, PieChart } from "@/components/charts";
 import { Cards } from "@/components/cardLine";
 import Image from "next/image";
+
 const { Header, Sider, Content } = Layout;
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -17,11 +18,14 @@ const App = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  const [main, setMain] = useState();
+
   return (
     <Layout className="w-screen h-screen">
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      <Sider trigger={null} collapsible collapsed={collapsed} className="px-4">
         <div className="w-full h-16 flex justify-center items-center">
-          <Image src={"/logo1.png"} width={100} height={50} />
+          <Image src={"/logo1.png"} width={100} height={0} />
         </div>
         <Menu
           theme="dark"
@@ -55,16 +59,19 @@ const App = () => {
             background: "#FFFFFF",
           }}
         >
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: "16px",
-              width: 64,
-              height: 64,
-            }}
-          />
+          <div className="w-full h-full flex justify-between">
+            <Button
+              type="text"
+              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+              style={{
+                fontSize: "16px",
+                width: 64,
+                height: 64,
+              }}
+            />
+            <div className=""></div>
+          </div>
         </Header>
         <Content
           style={{
@@ -78,7 +85,7 @@ const App = () => {
             <div className="flex gap-6 justify-center items-center">
               <Cards />
             </div>
-            <div className=" w-full h-full flex justify-center items-center">
+            <div className=" w-full h-full flex justify-center items-center flex-row">
               <LineChart />
               <PieChart />
             </div>
