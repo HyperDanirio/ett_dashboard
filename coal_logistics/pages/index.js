@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import { useState } from "react";
+import Link from "antd/lib/typography/Link";
 import { LineChart, PieChart } from "@/components/charts";
 import { Cards } from "@/components/cardLine";
 import Image from "next/image";
@@ -32,25 +33,23 @@ const App = () => {
           mode="inline"
           className="mt-5"
           defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "Dashboard",
-              path: "/",
-            },
-            {
-              key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
-            },
-          ]}
-        />
+        >
+          <Menu.Item>
+            <Link href="/" key={1}>
+              Dashboard
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href="/" key={2}>
+              Something
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href="/ovoolgo" key={3}>
+              Ovoolgo
+            </Link>
+          </Menu.Item>
+        </Menu>
       </Sider>
       <Layout className="overflow-auto">
         <Header
@@ -79,6 +78,7 @@ const App = () => {
             padding: 24,
             minHeight: 280,
             background: colorBgContainer,
+            borderRadius: 12,
           }}
         >
           <div className="px-16 flex flex-col gap-6">
