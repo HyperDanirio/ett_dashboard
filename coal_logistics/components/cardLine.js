@@ -11,8 +11,10 @@ export const Cards = () => {
     <>
       <div className="Card1 w-1/4 h-1/4 bg-primary rounded-md flex flex-col justify-start items-start text-white p-4 pr-4 shadow-lg">
         <div className="flex">
-          <span className="font-semibold text-2xl ml-2">26k</span>
-          <span className="flex items-center text-white/80 ml-2">
+          <span className="font-semibold text-2xl ml-2 cursor-default">
+            26k
+          </span>
+          <span className="flex items-center text-white/80 ml-2 cursor-default">
             (12.4%
             <svg
               className="w-[16px] h-[16px]"
@@ -27,15 +29,17 @@ export const Cards = () => {
             )
           </span>
         </div>
-        <span className="text-white/80 ml-2">something else</span>
+        <span className="text-white/80 ml-2 cursor-default">
+          something else
+        </span>
         <div className="w-full h-32 flex justify-center items-end">
           <Card1LineChart />
         </div>
       </div>
       <div className="Card2 w-1/4 h-1/4 bg-secondary rounded-md flex flex-col text-white p-4 shadow-lg">
         <div className="flex">
-          <span className="font-semibold text-2xl">26k</span>
-          <span className="flex items-center text-white/90">
+          <span className="font-semibold text-2xl cursor-default">26k</span>
+          <span className="flex items-center text-white/90 cursor-default">
             (12.4%
             <svg
               className="w-[16px] h-[16px]"
@@ -50,15 +54,15 @@ export const Cards = () => {
             )
           </span>
         </div>
-        <span className="text-white/90">Income</span>
+        <span className="text-white/90 cursor-default">Income</span>
         <div className="w-full h-32 flex justify-center items-end">
           <Card2LineChart />
         </div>
       </div>
       <div className=" Card3 w-1/4 h-1/4 bg-warning rounded-md flex flex-col text-white p-4 shadow-lg">
         <div className="flex">
-          <span className="font-semibold text-2xl">26k</span>
-          <span className="flex items-center text-white/90">
+          <span className="font-semibold text-2xl cursor-default">26k</span>
+          <span className="flex items-center text-white/90 cursor-default">
             (12.4%
             <svg
               className="w-[16px] h-[16px]"
@@ -73,15 +77,15 @@ export const Cards = () => {
             )
           </span>
         </div>
-        <span className="text-white/90">Income</span>
+        <span className="text-white/90 cursor-default">Income</span>
         <div className="w-full h-32 flex justify-center items-end">
           <Card3LineChart />
         </div>
       </div>
       <div className="Card4 w-1/4 h-1/4 bg-error rounded-md flex flex-col text-white p-4 shadow-lg">
         <div className="flex">
-          <span className="font-semibold text-2xl">26k</span>
-          <span className="flex items-center text-white/90">
+          <span className="font-semibold text-2xl cursor-default">26k</span>
+          <span className="flex items-center text-white/90 cursor-default">
             (12.4%
             <svg
               className="w-[16px] h-[16px]"
@@ -96,7 +100,7 @@ export const Cards = () => {
             )
           </span>
         </div>
-        <span className="text-white/90">Income</span>
+        <span className="text-white/90 cursor-default">Income</span>
         <div className="w-full h-32 flex justify-center items-end">
           <Card4LineChart />
         </div>

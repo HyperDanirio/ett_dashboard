@@ -74,17 +74,17 @@ const App = () => {
         >
           <Menu.Item>
             <Link className={collapsed ? "hidden" : ""} href="/" key={1}>
-              Dashboard
+              Хяналтын Самбар
             </Link>
           </Menu.Item>
           <Menu.Item>
             <Link className={collapsed ? "hidden" : ""} href="/" key={2}>
-              Something
+              Хуудас2
             </Link>
           </Menu.Item>
           <Menu.Item>
             <Link className={collapsed ? "hidden" : ""} href="/ovoolgo" key={3}>
-              Ovoolgo
+              Овоолго
             </Link>
           </Menu.Item>
         </Menu>
