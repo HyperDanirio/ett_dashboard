@@ -25,7 +25,13 @@ const App = () => {
   return (
     <Layout className="w-screen h-screen">
       <Sider trigger={null} collapsible collapsed={collapsed} className="px-4">
-        <div className="w-full h-16 flex justify-center items-center">
+        <div
+          className={
+            collapsed
+              ? "w-full h-16 hidden"
+              : "w-full h-16 flex justify-center items-center"
+          }
+        >
           <Image src={"/logo1.png"} width={100} height={0} />
         </div>
         <Menu
@@ -35,17 +41,17 @@ const App = () => {
           defaultSelectedKeys={["1"]}
         >
           <Menu.Item>
-            <Link href="/" key={1}>
+            <Link className={collapsed ? "hidden" : ""} href="/" key={1}>
               Dashboard
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href="/" key={2}>
+            <Link className={collapsed ? "hidden" : ""} href="/" key={2}>
               Something
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href="/ovoolgo" key={3}>
+            <Link className={collapsed ? "hidden" : ""} href="/ovoolgo" key={3}>
               Ovoolgo
             </Link>
           </Menu.Item>
