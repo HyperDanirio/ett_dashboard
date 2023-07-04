@@ -77,19 +77,19 @@ export const LineChart = () => {
 
   return (
     <>
-      <div className="w-2/3 h-full flex mx-auto flex-col mb-20">
+      <div className="w-2/3 h-full flex mx-auto flex-col mb-10">
         <div className="w-full h-10 flex justify-between items-center flex-row">
-          <div className="w-40 h-8 text-xl ml-9 font-semibold cursor-default">
+          <div className="w-40 h-8 text-xl ml-8 font-semibold cursor-default text-black/70">
             Мэдэхгүй
           </div>
           <div className="w-fit h-full space-x-1 mr-7 flex flex-row">
-            <button className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs">
+            <button className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs text-black/70 hover:text-black">
               7 Хоног
             </button>
-            <button className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs">
+            <button className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs text-black/70 hover:text-black">
               Сар
             </button>
-            <button className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs">
+            <button className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs text-black/70 hover:text-black">
               Жил
             </button>
           </div>
