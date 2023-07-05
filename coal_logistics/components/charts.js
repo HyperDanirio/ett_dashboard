@@ -5,11 +5,76 @@ import Button from "antd/lib/button";
 
 export const LineChart = () => {
   useEffect(() => {
-    let ctx = document.getElementById("myLineChart").getContext("2d");
-    let myChart = new Chart(ctx, {
+    let ctx1 = document.getElementById("myLineChart1").getContext("2d");
+    let myChart1 = new Chart(ctx1, {
       type: "line",
       data: {
         labels: [
+          " ",
+          "Даваа",
+          "Мягмар",
+          "Лxагва",
+          "Пүрэв",
+          "Баасан",
+          "Бямба",
+          "Ням",
+        ],
+        datasets: [
+          {
+            data: [34, 45, 56, 67, 78, 89, 90],
+            label: "Applied",
+
+            borderColor: "#3e95cd",
+            backgroundColor: "#7bb6dd",
+            fill: false,
+            lineTension: 0.1,
+          },
+          {
+            data: [70, 78, 90, 79, 65, 60, 50],
+            label: "Accepted",
+            borderColor: "#3cba9f",
+            backgroundColor: "#71d1bd",
+            fill: false,
+            lineTension: 0.1,
+          },
+          {
+            data: [10, 25, 45, 56, 35, 20, 30],
+            label: "Pending",
+            borderColor: "#ffa500",
+            backgroundColor: "#ffc04d",
+            fill: false,
+            lineTension: 0.1,
+          },
+          {
+            data: [6, 3, 10, 20, 7, 15, 10],
+            label: "Rejected",
+            borderColor: "#c45850",
+            backgroundColor: "#d78f89",
+            fill: false,
+            lineTension: 0.1,
+          },
+        ],
+      },
+      options: {
+        legend: {
+          display: false,
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItem) {
+              return tooltipItem.yLabel;
+            },
+          },
+        },
+      },
+    });
+
+    let ctx2 = document.getElementById("myLineChart2").getContext("2d");
+    let myChart2 = new Chart(ctx2, {
+      type: "line",
+      data: {
+        labels: [
+          " ",
           "1-р сар",
           "2-р сар",
           "3-р сар",
@@ -34,7 +99,20 @@ export const LineChart = () => {
             lineTension: 0.1,
           },
           {
-            data: [70, 78, 90, 79, 65, 60, 50, 70, 80, 100, 90, 80],
+            data: [
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+            ],
             label: "Accepted",
             borderColor: "#3cba9f",
             backgroundColor: "#71d1bd",
@@ -72,9 +150,94 @@ export const LineChart = () => {
         },
       },
     });
+
+    let ctx3 = document.getElementById("myLineChart3").getContext("2d");
+    let myChart3 = new Chart(ctx3, {
+      type: "line",
+      data: {
+        labels: [
+          " ",
+          "1-р сар",
+          "2-р сар",
+          "3-р сар",
+          "4-р сар",
+          "5-р сар",
+          "6-р сар",
+          "7-р сар",
+          "8-р сар",
+          "9-р сар",
+          "10-р сар",
+          "11-р сар",
+          "12-р сар",
+        ],
+        datasets: [
+          {
+            data: [34, 45, 56, 67, 78, 89, 90, 98, 87, 76, 65, 54],
+            label: "Applied",
+
+            borderColor: "#3e95cd",
+            backgroundColor: "#7bb6dd",
+            fill: false,
+            lineTension: 0.1,
+          },
+          {
+            data: [70, 78, 90, 79, 65, 60, 50, 70, 80, 100, 90, 80],
+            label: "Accepted",
+            borderColor: "#3cba9f",
+            backgroundColor: "#71d1bd",
+            fill: false,
+            lineTension: 0.1,
+          },
+          {
+            data: [
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+              Math.floor(Math.random() * 100),
+            ],
+            label: "Pending",
+            borderColor: "#ffa500",
+            backgroundColor: "#ffc04d",
+            fill: false,
+            lineTension: 0.1,
+          },
+          {
+            data: [6, 3, 10, 20, 7, 15, 10, 25, 17, 35, 30, 40],
+            label: "Rejected",
+            borderColor: "#c45850",
+            backgroundColor: "#d78f89",
+            fill: false,
+            lineTension: 0.1,
+          },
+        ],
+      },
+      options: {
+        legend: {
+          display: false,
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItem) {
+              return tooltipItem.yLabel;
+            },
+          },
+        },
+      },
+    });
   }, []);
 
   const [mainChart, setMainChart] = useState();
+  const [myLineChart1, setMyLineChart1] = useState(true);
+  const [myLineChart2, setMyLineChart2] = useState(false);
+  const [myLineChart3, setMyLineChart3] = useState(false);
 
   return (
     <>
@@ -85,18 +248,33 @@ export const LineChart = () => {
           </div>
           <div className="w-fit h-full space-x-1 mr-7 flex flex-row">
             <Button
+              onClick={() => {
+                setMyLineChart1(true);
+                setMyLineChart2(false);
+                setMyLineChart3(false);
+              }}
               className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs text-black/70 hover:text-black"
               type="dashed"
             >
               7 Хоног
             </Button>
             <Button
+              onClick={() => {
+                setMyLineChart1(false);
+                setMyLineChart2(true);
+                setMyLineChart3(false);
+              }}
               className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs text-black/70 hover:text-black"
               type="dashed"
             >
               Сар
             </Button>
             <Button
+              onClick={() => {
+                setMyLineChart1(false);
+                setMyLineChart2(false);
+                setMyLineChart3(true);
+              }}
               className="w-16 h-6 rounded-md bg-white border-2 border-gray-300 hover:bg-gray-100 hover:border-main hover:shadow-sm transition-all duration-100 flex justify-center items-center font-semibold text-xs text-black/70 hover:text-black"
               type="dashed"
             >
@@ -104,8 +282,14 @@ export const LineChart = () => {
             </Button>
           </div>
         </div>
-        <div className="  w-full h-auto my-auto">
-          <canvas height={200} width={400} id="myLineChart"></canvas>
+        <div className={myLineChart1 ? "w-full h-auto my-auto" : "hidden"}>
+          <canvas height={200} width={400} id="myLineChart1"></canvas>
+        </div>
+        <div className={myLineChart2 ? "w-full h-auto my-auto" : "hidden"}>
+          <canvas height={200} width={400} id="myLineChart2"></canvas>
+        </div>
+        <div className={myLineChart3 ? "w-full h-auto my-auto" : "hidden"}>
+          <canvas height={200} width={400} id="myLineChart3"></canvas>
         </div>
       </div>
     </>
@@ -139,7 +323,6 @@ export const PieChart = () => {
     </>
   );
 };
-
 export const Card1LineChart = () => {
   useEffect(() => {
     let ctx = document.getElementById("Card1LineChart").getContext("2d");
