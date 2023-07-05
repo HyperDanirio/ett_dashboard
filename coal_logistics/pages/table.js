@@ -13,7 +13,7 @@ import { Cards } from "@/components/cardLine";
 import Image from "next/image";
 
 const { Header, Sider, Content } = Layout;
-const App = () => {
+export default function table() {
   const [collapsed, setCollapsed] = useState(false);
 
   const {
@@ -23,8 +23,8 @@ const App = () => {
   const [main, setMain] = useState();
 
   return (
-    <Layout className="w-screen h-screen">
-      <Sider trigger={null} collapsible collapsed={collapsed} className="px-4">
+    <Layout>
+      <Sider>
         <div
           className={
             collapsed
@@ -100,5 +100,4 @@ const App = () => {
       </Layout>
     </Layout>
   );
-};
-export default App;
+}
