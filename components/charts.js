@@ -21,7 +21,7 @@ export const LineChart = () => {
         ],
         datasets: [
           {
-            data: [34, 45, 56, 67, 78, 89, 90],
+            data: [34, 45, 56, 67, 78, 89, 90, 20],
             label: "Applied",
 
             borderColor: "#3e95cd",
@@ -30,7 +30,7 @@ export const LineChart = () => {
             lineTension: 0.1,
           },
           {
-            data: [70, 78, 90, 79, 65, 60, 50],
+            data: [70, 78, 90, 79, 65, 60, 50, 10],
             label: "Accepted",
             borderColor: "#3cba9f",
             backgroundColor: "#71d1bd",
@@ -38,7 +38,7 @@ export const LineChart = () => {
             lineTension: 0.1,
           },
           {
-            data: [10, 25, 45, 56, 35, 20, 30],
+            data: [10, 25, 45, 56, 35, 20, 30, 10],
             label: "Pending",
             borderColor: "#ffa500",
             backgroundColor: "#ffc04d",
@@ -46,7 +46,7 @@ export const LineChart = () => {
             lineTension: 0.1,
           },
           {
-            data: [6, 3, 10, 20, 7, 15, 10],
+            data: [6, 3, 10, 20, 7, 15, 10, 10],
             label: "Rejected",
             borderColor: "#c45850",
             backgroundColor: "#d78f89",
@@ -155,21 +155,7 @@ export const LineChart = () => {
     let myChart3 = new Chart(ctx3, {
       type: "line",
       data: {
-        labels: [
-          " ",
-          "1-р сар",
-          "2-р сар",
-          "3-р сар",
-          "4-р сар",
-          "5-р сар",
-          "6-р сар",
-          "7-р сар",
-          "8-р сар",
-          "9-р сар",
-          "10-р сар",
-          "11-р сар",
-          "12-р сар",
-        ],
+        labels: [" ", "2019", "2020", "2021", "2022", "2023"],
         datasets: [
           {
             data: [34, 45, 56, 67, 78, 89, 90, 98, 87, 76, 65, 54],
